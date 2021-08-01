@@ -28,6 +28,7 @@ class _ChatState extends State<Chat> {
 
   List<ChatMessage> messages = [];
   @override
+
   void initState() {
     // TODO: implement initState
     messages.add(ChatMessage(messageContent: "Hi, ${widget.sender}", messageType: "receiver"));
@@ -130,10 +131,13 @@ class _ChatState extends State<Chat> {
                   SizedBox(width: 15,),
                   FloatingActionButton(
                     onPressed: (){
-                      setState(() {
-                        messages.add(ChatMessage(messageContent: _textEditingController.text, messageType: "sender"));
-                        _textEditingController.clear();
-                      });
+                      if(_textEditingController.text.isNotEmpty)
+                        {
+                          setState(() {
+                            messages.add(ChatMessage(messageContent: _textEditingController.text, messageType: "sender"));
+                            _textEditingController.clear();
+                          });
+                        }
                     },
                     child: Icon(Icons.send,color: Colors.white,size: 18,),
                     backgroundColor: Colors.blue,
