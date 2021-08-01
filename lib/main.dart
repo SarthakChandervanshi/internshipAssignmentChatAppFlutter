@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Internship Assigment",
+      title: "Internship Assignment",
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
       initialRoute: 'username',
